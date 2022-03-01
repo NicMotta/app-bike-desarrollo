@@ -56,15 +56,15 @@ useEffect(() => {
   }, []);
 
   return (
-    <>
-    <h1 className="text-center font-bold text-lg p-2">Valores giroscopio</h1>
+    <div className='my-1 border'>
+    <h1 className="text-center font-bold text-lg p-2 bg-slate-100">Valores giroscopio</h1>
 
     <div className="flex">
     <p className="text-center w-1/3 bg-slate-100 m-1 p-1 font-bold rounded-md">X: {}</p>
     <p className="text-center w-1/3 bg-slate-100 m-1 p-1 font-bold rounded-md">Y: {}</p>
     <p className="text-center w-1/3 bg-slate-100 m-1 p-1 font-bold rounded-md">Z: {}</p>
     </div>
-    </>
+    </div>
   )
 }
 

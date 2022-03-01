@@ -63,7 +63,7 @@ function Coordenadas(inicio) {
   
 
   return (
-    <>
+    <div className='my-1 border'>
     <h4 className="text-center font-bold text-lg p-2">Coordenadas</h4>
       
     <div className="flex">
@@ -76,7 +76,7 @@ function Coordenadas(inicio) {
     <button onClick={mostrarDatos}>Mostrar datos</button>
 
     <Clima {...geo}/>
-    </>
+    </div>
   );
 }
 

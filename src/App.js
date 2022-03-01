@@ -16,7 +16,7 @@ function App() {
   const [inicio, setInicio] = useState(false);
 
   const iniciarApp = () => {
-    setInicio(!inicio);
+    setInicio(true);
     return false;
   }
 
@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <>
+
     <div className="font-mono md:max-w-screen-md m-auto"> 
       
       <Header/>
@@ -44,12 +44,11 @@ function App() {
       <button onClick={detenerApp} className='p-2 m-3 text-base font-bold bg-gray-400 rounded-sm'>Detener</button>
       <button onClick={limpiarApp} className='p-2 m-3 text-base font-bold bg-gray-400 rounded-sm'>Reset</button>
       
-      <p className="text-center text-xs w-full bg-slate-200 m-1 p-1">Estado de inicio: {inicio ? "Encendido" : "Apagado"}</p>
+      <p className="text-xs bg-slate-200 m-auto p-1">Estado de inicio: {inicio ? "Encendido" : "Apagado"}</p>
       </div>
 
       <Footer/>
     </div>
-    </>
   );
 }
 
