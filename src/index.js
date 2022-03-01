@@ -3,14 +3,11 @@ import ReactDOM from 'react-dom';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
-import Footer from './Footer';
 import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
   <App/>
-  {/* <Test/> */}
-  <Footer/>
   </React.StrictMode>,
   document.getElementById('root')
 );

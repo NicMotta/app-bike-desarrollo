@@ -3,15 +3,15 @@ import Clima from "./Clima";
 
 function Coordenadas(inicio) {
 
-  const [lat, setLat] = useState(0);
-  const [lng, setLng] = useState(0);
+  const [lat, setLat] = useState([]);
+  const [lng, setLng] = useState([]);
   const [status, setStatus] = useState(null);
 
   // * Prueba
-  const [geo, setGeo] = useState({
+  const [geo, setGeo] = useState([{
     lat: '',
     lng: '',
-  });
+  }]);
 
   //* Dentro de esta misma funcion getLocation() podria incluir el guarddo en el localStorage los valores de lat y lng.
 
@@ -33,10 +33,10 @@ function Coordenadas(inicio) {
             lng: position.coords.longitude,
           }
 
-          setGeo(newLocation);
+          setGeo(...geo, newLocation);
 
           if (inicio) {
-            localStorage.setItem('valorGeo', JSON.stringify(lat, lng));
+            localStorage.setItem('valorGeo', geo);
            }
 
           // setColorEstado('green'); //! Modificar para que funcione
@@ -56,6 +56,10 @@ function Coordenadas(inicio) {
       getLocation();
     }, [])
 
+    function mostrarDatos(){
+      console.log(geo);
+    }
+
   
 
   return (
@@ -68,6 +72,8 @@ function Coordenadas(inicio) {
     </div>
 
     <p className="text-center text-xs w-full bg-red-300 m-1 p-1">{status}</p>
+
+    <button onClick={mostrarDatos}>Mostrar datos</button>
 
     <Clima {...geo}/>
     </>
