@@ -36,7 +36,7 @@ function App() {
       
       <Header/>
       
-      {/* <Coordenadas props = {inicio}/> */}
+      <Coordenadas props = {inicio}/>
       <SensorGy props = {inicio}/>
 
       <div className="text-center">

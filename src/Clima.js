@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 
-function Clima({lat, lng}) {
+function Clima(props) {
 
-  //console.log(lat);
+  console.log(props);
 
-  //const lat = 54.46565;
-  //const lng = 13.54635;
+  // const lat = 54.46565;
+  // const lng = 13.54635;
 
   const [state, setState] = useState({
     temperature: '',
@@ -33,7 +33,7 @@ const getClima = async() => {
 
 useEffect(() => {
   getClima();
-}, [lat])
+}, [])
 
 
 return (

@@ -33,7 +33,7 @@ function Coordenadas(inicio) {
             lng: position.coords.longitude,
           }
 
-          setGeo(...geo, newLocation);
+          // setGeo(...geo, newLocation);
 
           if (inicio) {
             localStorage.setItem('valorGeo', geo);
@@ -54,11 +54,8 @@ function Coordenadas(inicio) {
     //! No me guarda lat y lng en localStorage! No entiendo por que
     useEffect(() => {
       getLocation();
-    }, [])
+    }, []);
 
-    function mostrarDatos(){
-      console.log(geo);
-    }
 
   
 
@@ -71,11 +68,9 @@ function Coordenadas(inicio) {
     <p className="text-center w-1/2 bg-slate-100 m-1 p-1 font-bold rounded-md">Longitud: {lng}</p>
     </div>
 
-    <p className="text-center text-xs w-full bg-red-300 m-1 p-1">{status}</p>
+    <p className="text-center text-xs bg-red-300 p-1">{status}</p>
 
-    <button onClick={mostrarDatos}>Mostrar datos</button>
-
-    <Clima {...geo}/>
+    <Clima props={[lat, lng]}/>
     </div>
   );
 }
