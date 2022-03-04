@@ -7,19 +7,13 @@ function Coordenadas(inicio) {
   const [lng, setLng] = useState([]);
   const [status, setStatus] = useState(null);
 
-  // * Prueba
-  const [geo, setGeo] = useState([{
-    lat: '',
-    lng: '',
-  }]);
-
   //* Dentro de esta misma funcion getLocation() podria incluir el guarddo en el localStorage los valores de lat y lng.
 
   const getLocation = () => {
     if (!navigator.geolocation) {
       setStatus("Navegador no compatible.");
-      // setColorEstado('red'); //! Modificar para que funcione
-    } else {
+    } 
+    else {
       setStatus("Geolocalizando...");
       navigator.geolocation.watchPosition(
         (position) => {
@@ -28,23 +22,9 @@ function Coordenadas(inicio) {
           setLat(position.coords.latitude);
           setLng(position.coords.longitude);
 
-          const newLocation = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          }
-
-          // setGeo(...geo, newLocation);
-
-          if (inicio) {
-            localStorage.setItem('valorGeo', geo);
-           }
-
-          // setColorEstado('green'); //! Modificar para que funcione
-
         },
         () => {
           setStatus("No es posible establecer tu ubicación.");
-          // setColorEstado('red'); //! Modificar para que funcione
         }
       );
     }
