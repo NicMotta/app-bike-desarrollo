@@ -4,10 +4,10 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
-import TheRealShit from './theRealShit';
-import Header from './Header';
-import Coordenadas from "./Coordenadas";
-import SensorGy from "./SensorGy";
+import theRealFunction from './Components/theRealFunction';
+import Header from './Components/Header';
+import Coordenadas from "./Components/Coordenadas";
+import SensorGy from "./Components/SensorGy";
 
 
 
@@ -16,7 +16,7 @@ ReactDOM.render(
   <Header/>
   <SensorGy />
   <Coordenadas />
-  <TheRealShit/>
+  <theRealFunction/>
   </>,
   document.getElementById('root')
 );
