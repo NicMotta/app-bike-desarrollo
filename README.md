@@ -29,3 +29,11 @@ const firebaseConfig = {
   measurementId: "..."
 };
 ```
+
+#### Configurar Weather API
+
+src/Components/Clima.js: 
+
+``` javascript
+const API_KEY = '...';
+```

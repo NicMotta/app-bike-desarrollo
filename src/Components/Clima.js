@@ -22,7 +22,7 @@ function Clima(props) {
 
 const getClima = async() => {
 
-  const API_KEY = 'c65e2b7a0909702cdfebb886dc682768';
+  const API_KEY = '...';
   const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${newLat}&lon=${newLng}&appid=${API_KEY}&units=metric`;
 
 
